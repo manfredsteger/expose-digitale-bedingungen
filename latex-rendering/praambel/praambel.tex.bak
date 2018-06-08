@@ -1,0 +1,263 @@
+% !TEX root = digitale-bedingungen.tex
+
+\documentclass[headsepline,12pt,a4paper]{scrreprt}
+\renewcommand{\baselinestretch}{1.6}\normalsize %Zeilenabstand 1,5 Zeilig (baseline um 1.25 multipliziert).
+\renewcommand{\footnotesize}{\fontsize{9}{10}\selectfont} %Anpassung der Schriftgröße in den Fußnoten
+\usepackage[left=3cm, right=2.5cm, bottom=3cm, top=2.5cm]{geometry}
+	\setlength{\parindent}{0cm}
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage[fencedCode,inlineFootnotes,citations,definitionLists,hashEnumerators,smartEllipses,hybrid]{markdown}
+%% You can re-define how links are rendered: uncomment the following to get hyperlinked text instead of footnotes
+% \markdownSetup{rendererPrototypes={
+%   link = {\href{#2}{#1}},
+%   image = {\begin{figure}[hbt!]
+%     \centering
+%     \includegraphics{#3}%
+%     \ifx\empty#4\empty\else
+%     \caption{#4}%
+%     \fi
+%     \label{fig:#1}%
+%     \end{figure}}
+% }}
+
+\usepackage{tabularx}
+\usepackage{docmute} % Ermöglicht das Kompilieren aus einzelnen Kapiteln heraus, nicht nur aus der Hauptdatei des Buches.
+\usepackage{csquotes} %Paket zum Einfügen von mehrzeiliger Zitate mit dem Befehl displayquote
+%   \renewenvironment{displayquote} %Rechtsbündige mehrzeilige Zitate
+%    {\small\list{}{\rightmargin=0cm \leftmargin=1.5cm}
+%      \item\relax}
+%     {\endlist}
+\usepackage{framed,xcolor}
+\colorlet{shadecolor}{red!25}
+\usepackage{graphicx}
+\usepackage{chngcntr} %Fortlaufende Nummerierung der Abbildungen nicht nach Kapitel 
+  \counterwithout{figure}{chapter} %Gehört zu den fortlaufenden Nummerierungsoptionen 
+\usepackage{color}
+\usepackage{setspace}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{orange}{rgb}{0.255,0.153,0}
+\usepackage[final]{pdfpages}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\lstset{numbers=left, numberstyle=\tiny, numbersep=5pt}
+\lstset{language=PHP}
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={default},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Octave,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{white}, % the style that is used for the line-numbers
+  rulecolor=\color{white},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+\lstdefinestyle{customc}{
+  aboveskip=1.5\baselineskip,  
+  belowcaptionskip=0\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{orange},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+\lstset{escapechar=@,style=customc}
+\lstset{literate=%
+{Ö}{{\"O}}1 
+{Ä}{{\"A}}1 
+{Ü}{{\"U}}1 
+{ß}{{\ss}}2 
+{ü}{{\"u}}1 
+{ä}{{\"a}}1 
+{ö}{{\"o}}1
+}
+\usepackage[justification=raggedright,singlelinecheck=false]{caption} %Setzt die Bildunterschriften linksbündig
+
+\usepackage{lastpage} % for the number of the last page in the document
+\usepackage{fancyhdr} % Eigene Kopfzeile erstellen
+\pagestyle{fancy}
+\lhead{\nouppercase{\leftmark}} %Kopfzeile mit Kapitelnummer und Kapitelbezeichnung
+\chead{}
+\rhead{}
+\usepackage{pslatex}
+\usepackage{booktabs} %Erweiterte Optionen für Tabellen (toprule, midrule, bottomrule)
+\usepackage{multirow} %Erweiterte Optionen für Tabellen (multirow, multicolumn)
+\usepackage{lineno}
+%Ermöglicht fortlaufende Fußnoten über Kapitel hinweg
+\usepackage{remreset}
+\makeatletter
+\@removefromreset{footnote}{chapter}
+\makeatother
+
+\usepackage{minitoc}
+
+
+\usepackage{pdfpages}  %Befehl zum Einbinden \includepdf[pages={5,8,10-14}]{internal_rate_of_return.pdf}
+
+\usepackage{ragged2e} %Anpassung des Rausatzes im Literaturverzeichnis
+
+\usepackage{jurabib}
+
+\jurabibsetup{
+	authorformat=dynamic,
+	authorformat=smallcaps, % Autoren werden in Kapit\"alchen gesetzt
+	%authorformat=and, % Autoren werden durch 'und' getrennt
+	authorformat=year, % Das Jahr wird in den Zitaten mit angegeben
+	% bibformat=ibidem, %Ebd. wird auch im Literaturverz. angegeben
+	bibformat=raggedright,
+	%authorformat=italic, % Der Autor wird in den Zitaten kursiv gesetzt
+	commabeforerest, % Komma vor der Seitenzahl und erg\"anzenden Eintr\"agen
+	%citefull=first, %Beim ersten Zitat wird der komplette Bib-Eintrag angezeigt
+	dotafter=bibentry, % setzt einen Punkt nach dem Bib-Eintrag
+	%titleformat={colonsep}, % Doppelpunkt zwischen Autor und Titel
+	ibidem=strict, %Erstellt ebd. und A.o.O bei Wiederholungen
+	% nopublisher=both,
+	titleformat=italic, % setzt den Titel kursiv
+	%titleformat=all, % der gesamte Titel wird im Zitat angezeigt
+	% titleformat=ibidem,
+	%chicago,
+	%oxford,
+	pages=format, % vor den Seitenzahlen erscheint ein 'S.'
+	%bibformat=ibidemalt % Eine alternative Darstellung des Literaturverzeichnisses,
+	%bibformat=compress, % Der Abstand zwischen den einzelnen Beitr\"agen wird verringert
+	%super, %konvertiert alle \cite-Befehle in \footcite
+	see=true,
+	round,
+	% edby=true,
+	% natoptargorder,
+	%authorformat=allreversed, %\"Anderungen der Zitate gelten auch f\"ur das Lit-Verzeichnis 
+	%howcited=normal %Zitiert nach erscheint hinter dem Titel
+}
+%\usepackage[bottom, hang]{footmisc}%Erweiterte Einstellungen für die Fußnoten
+%\setlength{\footnotemargin}{5pt} %Einzug des Fußnotentextes
+%\setlength{\footnotesep}{<neuerAbstand>}%Abstand zwischen den Fußnoten
+%\setlength{\skip\footins}{<neuerAbstand>}% Abstand von Haupttext und Fußnoten
+
+\deffootnote[1em]{1em}{0em}{\textsuperscript{\thefootnotemark}}%KOMA Fußnoten Einstellungen
+
+% \DeclareRobustCommand{\jbissn}[1]{}
+% \DeclareRobustCommand{\jbisbn}[1]{}
+% für Ebd.:
+\AddTo\bibsgerman{%
+\renewcommand*{\ibidemname}{Ebd.}
+\renewcommand*{\ibidemmidname}{Ebd.}
+\renewcommand*{\urldatecomment}{Stand: } %Date Access von Mendeley Anzeige
+\def\incollinname{In:}
+\def\editorname{(\textup{Hrsg.})}%
+\def\editorsname{(\textup{Hrsg.})}%
+\def\etalname{\unskip\nobreakspace{}\textup{et\,al .}}%
+\def\etalnamenodot{\unskip\nobreakspace{}\textup{e t\,al}}%
+% \def\edbyname{herausgegeben von}%
+% \def\Edbyname{Herausgegeben von}%
+}
+
+%Formatierung URL
+%\biburlfont{tt} % typewriter 
+\biburlfont{rm} % roman 
+%\biburlfont{sf} % serifenlos 
+%\biburlfont{same} % wie im Text
+
+% Formatierung der Zitate
+\renewcommand{\jbcitationyearformat}[1]{#1}%
+\renewcommand*{\jbbtasep}{; } 
+\renewcommand*{\jbbfsasep}{, } 
+\renewcommand*{\jbbstasep}{; }
+% \renewcommand*{\jbbtesep}{ \& } 
+% \renewcommand*{\jbbfsesep}{, } 
+% \renewcommand*{\jbbstesep}{ \& }
+
+% Formatierung der Bibliography Angaben
+
+\renewcommand*{\bibbtasep}{; } % bta = between two authors sep
+\renewcommand*{\bibbfsasep}{; } % bfsa = between first and second author sep
+\renewcommand*{\bibbstasep}{; }% bsta = between second and third author sep
+
+\renewcommand*{\bibbtesep}{; } % bte = between two editors sep
+\renewcommand*{\bibbfsesep}{; } % bfse = between first and second editor sep
+\renewcommand*{\bibbstesep}{; }% bste = between second and third editor sep
+
+\renewcommand*{\biburlprefix}{[URL: } %Eintrag vor der URL
+\renewcommand*{\biburlsuffix}{]} %Eingtrag nach der URL
+\biburlfont{same}
+
+\usepackage[pagebackref]{hyperref} %Verlinkungen innerhalb und außerhalb des Dokumentes und zusätzlich Backlinks zu den Fußnoten
+
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=false,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=true,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={Masterarbeit: Lernen? Potenziale aktueller Medienkultur am Beispiel einer digitalen Mitschriftassistenz},    % title
+    pdfauthor={Manfred Steger},     % author
+    pdfkeywords={Universität Hamburg} {Masterarbeit} {Lerntheorie} {Aktuelle Medien} {Medientheorie} {Schule} {Inklusion} {Inklusion Medien} {Mitschriftassistenz}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=black,          % color of internal links (change box color with linkbordercolor)
+    citecolor=black,        % color of links to bibliography
+    filecolor=black,      % color of file links
+    urlcolor=black           % color of external links
+}
+\usepackage{subfigure}
+\usepackage{titlesec} % Textüberschriften anpassen
+% \titleformat{Überschriftenklasse}[Absatzformatierung]{Textformatierung} {Nummerierung}{Abstand zwischen Nummerierung und Überschriftentext}{Code vor der Überschrift}[Code nach der Überschrift]
+
+%\titleformat{\chapter}[hang]{\Large\bfseries}{\thechapter\quad}{20pt}{}
+%\titleformat{\section}[hang]{\large\bfseries}{\thesection\quad}{20pt}{}
+%\titleformat{\subsection}[hang]{\large\bfseries}{\thesubsection\quad}{20pt}{}
+%\titleformat{\subsubsection}[hang]{\large\bfseries}{\thesubsubsection\quad}{20pt}{}
+%\titleformat{\paragraph}[hang]{\large\bfseries}{\theparagraph\quad}{20pt}{}
+
+% \titlespacing{Überschriftenklasse}{Linker Einzug}{Platz oberhalb}{Platz unterhalb}[rechter Einzug]
+
+%\titlespacing{\chapter}{0pt}{10pt}{10pt}[10pt]
+\titlespacing{\section}{0pt}{25pt}{10pt}
+%\titlespacing{\subsection}{0pt}{20pt}{10pt}
+%\titlespacing{\subsubsection}{0pt}{20pt}{10pt}
+%\titlespacing{\paragraph}{0pt}{20pt}{10pt}
+
+\usepackage{pdfcomment} % Create Tooltips/Alt Text for Images
+
+
+%%%%%%%%%Deckblatt%%%%%%%%%%%
+
+
+\clubpenalty = 10000 
+\widowpenalty = 10000 
+
+%%%%%% Dieser Absatz verhindert den Seitenumbruch bei Kapiteln
+%\makeatletter 
+%\renewcommand\chapter{\thispagestyle{plain}%
+%\global\@topnum\z@
+%\@afterindentfalse
+%\secdef\@chapter\@schapter}
+%\makeatother 
+%%%%%%

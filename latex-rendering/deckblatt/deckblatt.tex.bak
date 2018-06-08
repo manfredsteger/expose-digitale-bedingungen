@@ -1,0 +1,47 @@
+% !TEX root = digitale-bedingungen.tex
+
+\begin{titlepage}
+\renewcommand{\baselinestretch}{1.6}\normalsize
+\let\footnotesize\small
+\let\footnoterule\relax
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm} %Stellt den Seitenrand dieser Seite um
+
+
+\begin{picture}(0,0)
+\put(-22,-10){\includegraphics[scale=0.40]{../bilder/UHH-Logo_2010_Farbe_CMYK.eps}}
+\end{picture}
+
+\begin{picture}(0,0)
+\put(300,10){\includegraphics[scale=0.25]{../bilder/Wortmarke_UHH_Wortmarke_aktuell.eps}}
+\end{picture}
+
+\vspace{50pt}
+
+\begin{center}
+Universität XXX\\
+Fakultät für Erziehungswissenschaft\\ [6em]
+
+{\huge \textbf{Exposé}}\\[2.5em]
+
+{\LARGE Digitale Bedingungen für offene Bildungsräume}\\[6em]
+
+\emph{Eingereicht im Fachbereich Erziehungswissenschaft von:}\\
+
+Manfred Steger\\ 
+Matrikelnummer: 6250819\\
+info@manfred-steger.de\\[2em]
+
+\emph{Erstgutachter:}\\
+Priv.-Doz. Dr. Markus Deimann\\[2em]
+
+\emph{Zweitgutachter:}\\
+Prof. Dr. Sven Degenhardt\\[3em]
+(Hamburg, den 15.04.2018)\\
+
+
+\end{center}
+
+\newpage
+
+\end{titlepage}
+\restoregeometry %Stellt wieder auf die globale Seitenrandbeschreibung um

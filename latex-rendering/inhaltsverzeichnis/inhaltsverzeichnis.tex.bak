@@ -1,0 +1,16 @@
+% !TEX root = digitale-bedingungen.tex
+
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
+\renewcommand{\baselinestretch}{1.22}\normalsize
+\newgeometry{left=3cm, right=3cm, bottom=2.5cm, top=2.5cm} %Stellt den Seitenrand dieser Seite um
+
+\pagenumbering{roman}
+\tableofcontents % Erstellt das Inhaltsverzeichnis
+\newpage
+
+\listoffigures
+\newpage
+
+\restoregeometry %Stellt wieder auf die globale Seitenrandbeschreibung um
+
+\pagenumbering{arabic}
