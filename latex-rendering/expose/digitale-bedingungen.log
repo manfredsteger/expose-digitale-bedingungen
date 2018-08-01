@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.8)  8 JUN 2018 16:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.9)  11 JUN 2018 12:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1196,11 +1196,11 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 
 Package epstopdf Info: Source file: <../../images/UHH-Logo_2010_Farbe_CMYK.eps>
 
-(epstopdf)                    date: 2014-02-26 11:31:06
+(epstopdf)                    date: 2018-06-09 15:03:24
 (epstopdf)                    size: 380654 bytes
 (epstopdf)             Output file: <../../images/UHH-Logo_2010_Farbe_CMYK-eps-
 converted-to.pdf>
-(epstopdf)                    date: 2014-03-06 20:07:09
+(epstopdf)                    date: 2018-06-09 15:03:24
 (epstopdf)                    size: 18999 bytes
 (epstopdf)             Command: <repstopdf --outfile=../../images/UHH-Logo_2010
 _Farbe_CMYK-eps-converted-to.pdf ../../images/UHH-Logo_2010_Farbe_CMYK.eps>
@@ -1216,11 +1216,11 @@ Package pdftex.def Info: ../../images/UHH-Logo_2010_Farbe_CMYK-eps-converted-to
 (pdftex.def)             Requested size: 157.7867pt x 51.39108pt.
 Package epstopdf Info: Source file: <../../images/Wortmarke_UHH_Wortmarke_aktue
 ll.eps>
-(epstopdf)                    date: 2015-12-01 10:17:45
+(epstopdf)                    date: 2018-06-09 15:03:24
 (epstopdf)                    size: 649438 bytes
 (epstopdf)             Output file: <../../images/Wortmarke_UHH_Wortmarke_aktue
 ll-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-02-25 10:39:31
+(epstopdf)                    date: 2018-06-09 15:03:24
 (epstopdf)                    size: 15379 bytes
 (epstopdf)             Command: <repstopdf --outfile=../../images/Wortmarke_UHH
 _Wortmarke_aktuell-eps-converted-to.pdf ../../images/Wortmarke_UHH_Wortmarke_ak
